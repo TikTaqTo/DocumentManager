@@ -13,6 +13,8 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["DocumentManager/DocumentManager.csproj", "DocumentManager/"]
+COPY ["DocumentManager/docs/mainPageHtml.txt", "DocumentManager/docs/"]
+COPY ["DocumentManager/docs/secondPageHtml.txt", "DocumentManager/docs/"]
 RUN dotnet restore "DocumentManager/DocumentManager.csproj"
 COPY . .
 WORKDIR "/src/DocumentManager"

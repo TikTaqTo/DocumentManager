@@ -6,6 +6,13 @@ namespace DocumentManager.Services
 {
     public class DocumentManagerService : IDocumentManagerService
     {
+        private readonly IConfiguration _configuration;
+
+        public DocumentManagerService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public async Task<byte[]> ConvertHtmlToPdfAsync(string html)
         {
             var pdfOptions = new PdfOptions() { Format = PuppeteerSharp.Media.PaperFormat.A4, MarginOptions = new PuppeteerSharp.Media.MarginOptions() { Top = "25" } };
@@ -32,7 +39,7 @@ namespace DocumentManager.Services
             // При полном заполнений данными
             if(document.typeId == 1)
             {
-                string text = File.ReadAllText("docs/mainPageHtml.txt");
+                string text = File.ReadAllText(_configuration["MainHtmlTemplatePath"]);
 
                 StringBuilder mainSb = new StringBuilder(text);
                 
@@ -84,7 +91,7 @@ namespace DocumentManager.Services
             }
             else
             {
-                string text = File.ReadAllText("docs/secondPageHtml.txt");
+                string text = File.ReadAllText(_configuration["SecondHtmlTemplatePath"]);
 
                 StringBuilder mainSb = new StringBuilder(text);
 

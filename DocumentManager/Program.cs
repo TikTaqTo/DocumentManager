@@ -23,6 +23,7 @@ app.UseCors(builder => builder
 //{
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 //}
 
 app.UseAuthorization();

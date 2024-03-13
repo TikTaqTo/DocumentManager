@@ -816,11 +816,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Windows Pro\\Desktop\\Prod\\DocumentManager\\DocumentManager\\DocumentManager.csproj",
+      "projectUniqueName": "C:\\Users\\Windows Pro\\Documents\\GitHub\\DocumentManager\\DocumentManager\\DocumentManager.csproj",
       "projectName": "DocumentManager",
-      "projectPath": "C:\\Users\\Windows Pro\\Desktop\\Prod\\DocumentManager\\DocumentManager\\DocumentManager.csproj",
+      "projectPath": "C:\\Users\\Windows Pro\\Documents\\GitHub\\DocumentManager\\DocumentManager\\DocumentManager.csproj",
       "packagesPath": "C:\\Users\\Windows Pro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Windows Pro\\Desktop\\Prod\\DocumentManager\\DocumentManager\\obj\\",
+      "outputPath": "C:\\Users\\Windows Pro\\Documents\\GitHub\\DocumentManager\\DocumentManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Windows Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",

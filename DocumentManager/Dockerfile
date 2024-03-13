@@ -13,8 +13,6 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["DocumentManager/DocumentManager.csproj", "DocumentManager/"]
-COPY ["DocumentManager/docs/mainPageHtml.txt", "DocumentManager/docs/"]
-COPY ["DocumentManager/docs/secondPageHtml.txt", "DocumentManager/docs/"]
 RUN dotnet restore "DocumentManager/DocumentManager.csproj"
 COPY . .
 WORKDIR "/src/DocumentManager"
@@ -25,5 +23,7 @@ RUN dotnet publish "DocumentManager.csproj" -c Release -o /app/publish /p:UseApp
 
 FROM base AS final
 WORKDIR /app
+COPY ["DocumentManager/docs/mainPageHtml.txt", "/docs/"]
+COPY ["DocumentManager/docs/secondPageHtml.txt", "/docs/"]
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "DocumentManager.dll"]

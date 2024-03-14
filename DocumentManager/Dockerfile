@@ -23,7 +23,7 @@ RUN dotnet publish "DocumentManager.csproj" -c Release -o /app/publish /p:UseApp
 
 FROM base AS final
 WORKDIR /app
-COPY ["DocumentManager/docs/mainPageHtml.txt", "/docs/"]
-COPY ["DocumentManager/docs/secondPageHtml.txt", "/docs/"]
+COPY ["DocumentManager/docs/mainPageHtml.txt", "/app/docs/"]
+COPY ["DocumentManager/docs/secondPageHtml.txt", "/app/docs/"]
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "DocumentManager.dll"]

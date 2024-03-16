@@ -26,6 +26,8 @@ app.UseCors(builder => builder
     app.UseDeveloperExceptionPage();
 //}
 
+app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
 app.MapControllers();
